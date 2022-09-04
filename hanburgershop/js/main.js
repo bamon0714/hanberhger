@@ -5,6 +5,20 @@ $(function($) {
         loop:true
     });
 
+  $(".modal-button").modaal();
+  
+  $('nav a[herf^="#]').click(function(){
+    var adjust=0;
+    var speed=400;
+    var href=$(this).attr("href");
+    var target=$(href == "#" || href == "" ? 'html' : href);
+    $('body,html').animate({
+        scrollTop: position
+    }, speed, 'swing');
+    return false;
+    });
+  });
+
     $('.bg-swicher').bgSwitcher({
         images: ['images/bg1.jpg','images/bg2/jpg','images/bg3.jpg'],
         interval: 50000,
